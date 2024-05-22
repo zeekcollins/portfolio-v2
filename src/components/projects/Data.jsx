@@ -45,7 +45,7 @@ export const projectsData = [
         image: PortfolioV1Pic,
         link: {
             github: "https://github.com/zeekcollins/portfolio-v1",
-            web: "https://zeekcollins.com"
+            web: "https://storied-marzipan-9bf60a.netlify.app/"
         },
     }
 ]

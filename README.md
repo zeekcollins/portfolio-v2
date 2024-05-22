@@ -38,7 +38,7 @@ This project was developed with the following technologies:
 
 If you're curious, check out my previous portfolio site:
 
-- [v1]()
+- [v1](https://storied-marzipan-9bf60a.netlify.app/)
 
 ---
 
