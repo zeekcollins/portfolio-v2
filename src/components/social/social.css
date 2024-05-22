@@ -1,0 +1,57 @@
+.social-menu {
+    position: fixed;
+    bottom: 0;
+    left: 40px;
+    right: auto;
+    margin: 0;
+    display: grid;
+    z-index: 50000;
+}
+
+.social__icon {
+    color: var(--title-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social__icon:hover {
+    color: var(--title-color-dark);
+    transition: color 0.3s ease;
+}
+
+a {
+    padding: 10px;
+}
+
+.social__link {
+    padding: 7px 10px;
+}
+
+.social-menu a:last-of-type{
+    margin-bottom: 10px;
+}
+
+.social-menu::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 90px;
+    margin: 0px auto;
+    background-color: var(--title-color);
+}
+
+/*============ BREAKPOINTS ============*/
+
+/* Device Size 1 */
+@media screen and (max-width: 1180px) {
+    .social-menu {
+        left: 20px;
+    }
+}
+  
+/* Device Size 2 */
+@media screen and (max-width: 768px) {
+    .social-menu {
+        display: none;
+    }
+}

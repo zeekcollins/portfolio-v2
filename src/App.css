@@ -1,38 +1,291 @@
-.App {
+/*================ GOOGLE FONTS ================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*================ CSS VARIABLES ================*/
+:root {
+  --header-height: 3rem;
+
+  /*============ COLORS ============*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --hue: 111;
+  --sat: 15%;
+  --hue-2: 0;
+  --sat-2: 0%;
+  --title-color: hsl(var(--hue), var(--sat), 15%);
+  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
+  --text-color: hsl(var(--hue-2), var(--sat-2), 20%);
+  --body-color: hsl(var(--hue), var(--sat), 80%);
+  --container-color: rgb(255, 255, 255);
+  --box-color: rgba(255, 255, 255, 0.5);
+
+  /*============ FONT AND TYPOGRAPHY ============*/
+  --body-font: "Poppins", sans-serif;
+  --big-font-size: 3.5rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --xsmall-font-size: 0.813rem;
+  --tiny-font-size: 0.625rem;
+
+  /*============ FONT WEIGHT ============*/
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 800;
+
+  /*============ MARGIN BOTTOMS ============*/
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /*============ Z-INDEX ============*/
+  --z-tooltip: 10;
+  --z-fixed: 9000;
+  --z-modal: 9900;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 992px) {
+  :root {
+    --big-font-size: 2.75rem;
+    --medium-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --xsmall-font-size: 0.75rem;
+  }
+}
+
+/*============ BASE ============*/
+* {
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body, button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: -1000;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--body-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--title-color);
+  border-radius: 35px;
+}
+
+.no-scroll {
+  overflow-y: hidden !important;
+}
+
+/*============ REUSABLE CSS CLASSES ============*/
+.section {
+  padding: 6rem 0 2rem;
+}
+
+.main-content {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.main-content.main-appear {
+  opacity: 1;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.top-section {
+  height: calc(100vh - calc(var(--header-height) / 2));
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+}
+
+.section__title, .section__subtitle {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*============ LAYOUT ============*/
+.container {
+  max-width: 968px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.grid {
+  display: grid;
+  gap: 1.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.main {
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+/*============ BUTTONS ============*/
+.button {
+  display: inline-block;
+  background-color: var(--title-color);
+  color: var(--container-color);
+  padding: 1.25rem 2rem;
+  border-radius: 1rem;
+  font-weight: var(--font-medium);
+  border: 1px solid var(--title-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--title-color-dark);
+}
+
+.button__icon {
+  margin-left: var(--mb-0-5);
+}
+
+.button--flex {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/*============ BREAKPOINTS ============*/
+/* X-Large Devices */
+@media screen and (max-width: 1180px) {
+  .main {
+    padding-left: 100px;
+    padding-right: 100px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* X-Large Devices */
+@media screen and (max-width: 1080px) {
+  .main {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+/* Large Devices */
+@media screen and (max-width: 992px) {
+  .container {
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+  }
+}
+
+/* Medium Devices */
+@media screen and (max-width: 768px) {
+  body {
+      margin: var(--header-height) 0 0;
+  }
+  
+  .section {
+    padding: 4rem 0 1rem;
+  }
+
+  .main {
+    padding-left: 65px;
+    padding-right: 65px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* Small Devices */
+@media screen and (max-width: 350px) {
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
   }
 }

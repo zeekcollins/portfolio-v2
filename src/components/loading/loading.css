@@ -1,0 +1,79 @@
+.loading {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--title-color); 
+    z-index: 9999999;
+    animation: change-bgColor 1.25s ease forwards 4.75s, fade-away 1.5s ease forwards 6s;
+}
+
+.logo-svg {
+    animation: fill 1.5s ease forwards 3.25s;
+}
+
+.logo-svg path:nth-child(1){
+    stroke-dasharray: 232px;
+    stroke-dashoffset: 232px;
+    animation: line-anim 1s ease forwards 0.5s;
+}
+
+.logo-svg path:nth-child(2){
+    stroke-dasharray: 417px;
+    stroke-dashoffset: 417px;
+    animation: line-anim 1.5s ease forwards 1s;
+}
+
+.logo-svg path:nth-child(3){
+    stroke-dasharray: 345px;
+    stroke-dashoffset: 345px;
+    animation: line-anim 1.5s ease forwards 1.5s;
+}
+
+.logo-svg path:nth-child(4){
+    stroke-dasharray: 232px;
+    stroke-dashoffset: 232px;
+    animation: line-anim 1s ease forwards 2s;
+}
+
+.loading-active::-webkit-scrollbar-track {
+    background-color: var(--title-color); 
+    transition: background-color 1.5s ease;
+}
+
+@keyframes line-anim {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill {
+    from {
+        fill: transparent;
+    }
+    to {
+        fill: var(--body-color);
+    }
+}
+
+@keyframes change-bgColor {
+    0% {
+        background-color: var(--title-color);
+    }
+    100% {
+        background-color: var(--body-color);
+    }
+}
+
+@keyframes fade-away {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

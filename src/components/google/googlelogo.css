@@ -1,0 +1,23 @@
+.google-logo {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-semi-bold);
+    -webkit-text-stroke: 0.04rem black;
+    color: white;
+}
+
+.google-logo.g0 { color: #4285F4; }
+.google-logo.o1 { color: #EA4335; }
+.google-logo.o2 { color: #FBBC05; }
+.google-logo.g3 { color: #4285F4; }
+.google-logo.l4 { color: #34A853; }
+.google-logo.e5 { color: #EA4335; }
+
+
+/*============ BREAKPOINTS ============*/
+
+/* Device Size 1 */
+@media screen and (max-width: 992px) {
+    .google-logo {
+        -webkit-text-stroke: 0.03rem black;
+    }
+}

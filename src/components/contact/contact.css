@@ -1,0 +1,121 @@
+#contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact__container {
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+    border: var(--title-color) 0.1rem solid;
+    margin: 2rem auto;
+    padding: 0.5rem;
+    background-color: var(--box-color);
+}
+
+.contact__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .5rem 1rem;
+}
+
+.contact__info:last-child {
+    margin-left: 0;
+}
+
+.contact__info:first-child {
+    margin-right: 0;
+}
+
+.contact__icon {
+    font-size: 1.5rem;
+    color: var(--title-color);
+}
+
+.contact__info a {
+    font-size: var(--normal-font-size);
+    color: var(--title-color);
+    cursor: pointer;
+    position: relative;
+    padding: 0 0 .25rem;
+    margin: 0 0.625rem 0 0.625rem;
+}
+
+.contact__info a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.175rem;
+    left: 0;
+    bottom: 0px;
+    background-color: var(--title-color);
+    -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+}
+
+.contact__info a:hover::after {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+}
+
+/*============ BREAKPOINTS ============*/
+
+/* Device Size 1 */
+@media screen and (max-width: 549px) {
+    .contact__container {
+        flex-direction: column;
+        padding: 0.5rem 1rem;
+        gap: 0;
+    }
+
+    .contact__info a {
+        margin: 0 0 0 0.625rem;
+    }
+
+    .contact__info:last-child {
+        border-top: 1px dotted black;
+        padding-top: .5rem;
+        margin: 0 .5rem .25rem;
+
+    }
+
+    .contact__info:first-child {
+        margin: .5rem;
+    }
+}
+
+/* Device Size 2 */
+@media screen and (max-width: 350px) {
+    .contact__info a {
+        font-size: var(--small-font-size);
+    }
+
+    .contact__icon {
+        font-size: 1.25rem;
+    }
+}
+
+/* Device Size 3 */
+@media screen and (max-width: 245px) {
+    .contact__info:first-child {
+        display: none;
+    }
+
+    .contact__info:last-child {
+        border-top:  0px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .contact__info a {
+        font-size: var(--normal-font-size);
+    }
+
+    .contact__icon {
+        font-size: 1.75rem;
+    }
+}
