@@ -23,7 +23,7 @@ My Portfolio Website - v2
 
 ## :exclamation: About
 
-At the time of creating this site (Spring '24), I am a software engineer with two years of experience at Google. I'm getting ready to start my next opportunity search and figured it'd be a good idea create an upgraded portfolio site to showcase my growth since the last version. If you have any feedback, it's always welcomed.
+At the time of creating this site (Spring '24), I am a software engineer with two years of experience at Google. I'm getting ready to start my next opportunity search and figured it'd be a good idea to create an upgraded portfolio site to showcase my growth since the last version. If you have any feedback, it's always welcomed.
 
 ## :rocket: Technologies
 
