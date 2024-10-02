@@ -10,7 +10,7 @@ const Contact = () => {
             <div className="contact__container container grid">
                 <div className="contact__info">
                     <i className='bx bx-envelope contact__icon' ></i>
-                    <p><a href="mailto:collezek@gmail.com">Collezek@gmail.com</a></p>
+                    <p><a href="mailto:ezekcollins@gmail.com">EzekCollins@gmail.com</a></p>
                 </div>
                 <div className="contact__info">
                     <i className="bx bxl-linkedin-square contact__icon"></i>

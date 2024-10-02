@@ -5,7 +5,7 @@ import MyResume from "../../assets/Resume - Ezekial Collins.pdf"
 
 const Intro = () => {
     const handleContactClick = (event) => {
-        const hasEmailClient = navigator.canShare && navigator.canShare({ url: 'mailto:collezek@gmail.com' });
+        const hasEmailClient = navigator.canShare && navigator.canShare({ url: 'mailto:ezekcollins@gmail.com' });
 
         if (!hasEmailClient) {
             event.preventDefault();
@@ -29,7 +29,7 @@ const Intro = () => {
              for ML Engineers and users.</p>
 
              <div className="intro__clickables">
-                <a href="mailto:collezek@gmail.com" className="button button--flex one" onClick={handleContactClick}>
+                <a href="mailto:ezekcollins@gmail.com" className="button button--flex one" onClick={handleContactClick}>
                     Contact Me
                     <i className="bx bxs-send intro__icon"></i>
                 </a>
